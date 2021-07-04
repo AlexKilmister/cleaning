@@ -89,12 +89,12 @@ class ButtonAnimate {
 					this.clear()
 				}
 			})
-			//this.rt.paused(true)
-			this.rt.clear().to(this.el, 0.4,
-				{
-					rotate: 0,
-					ease:Linear.easeNone,
-				})
+			this.rt.paused(true)
+			// this.rt.clear().to(this.el, 0.4,
+			// 	{
+			// 		rotate: 0,
+			// 		ease:Linear.easeNone,
+			// 	})
 
 		}
 	}
@@ -170,7 +170,8 @@ class ButtonAnimate {
 				ease: Power4.easeNone,
 				duration: 0.6
 			})
-		this.rotate()
+		this.rt.play()
+		//this.rotate()
 		this.parent.style.zIndex = 50
 	}
 }
