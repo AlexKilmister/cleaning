@@ -1,0 +1,244 @@
+.tabs {
+	display: flex;
+	align-items: stretch;
+	margin-bottom: (100/$screen-size * 100vw);
+
+	&__sidebar {
+		width: 0;
+		height: (630/$screen-size * 100vw);
+		min-height: (600/$screen-size * 100vw);
+		overflow: hidden;
+		@include transition(width,1s);
+	}
+
+	&__content {
+		position: relative;
+		overflow: hidden;
+		margin: 0 auto;
+		width: (1094/$screen-size * 100vw);
+		height: (630/$screen-size * 100vw);
+		min-height: (600/$screen-size * 100vw);
+		@include transition(width,1s);
+	}
+
+	&.is-active{
+		margin-bottom: 0;
+
+		.tabs {
+			&__sidebar {
+				width: (375/$screen-size * 100vw);
+				height: (800/$screen-size * 100vw);
+			}
+
+			&__content {
+				width: (1065/$screen-size * 100vw);
+				height: (800/$screen-size * 100vw);
+				min-height: (800/$screen-size * 100vw);
+			}
+		}
+
+		.service-block {
+
+			&__image {
+				width: (1065/$screen-size * 100vw);
+				border-radius: 0;
+			}
+		}
+
+		.tabs-panel {
+
+			&.active {
+
+				.service-block {
+					&__layer {
+						opacity: 1;
+						transition-delay: 1s;
+					}
+				}
+			}
+		}
+	}
+}
+
+.tabs-panel {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	z-index: 0;
+	transform-origin: 100% 50%;
+
+	&.last {
+		z-index: 9;
+
+		.service-block {
+			&__layer {
+				transition-delay: 1s;
+				opacity: 0;
+			}
+		}
+	}
+
+	&.active {
+		z-index: 10;
+		animation: slide 0.9s linear forwards;
+
+		.service-block {
+			&__layer {
+				opacity: 0;
+			}
+		}
+	}
+}
+
+@keyframes slide {
+	0% {
+		width: 0;
+		transform: scale(1.3);
+	}
+	100% {
+		width: 100%;
+		transform: scale(1);
+	}
+}
+
+.service-block {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+
+	&__image {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 50% 50%;
+		border-radius: (8/$screen-size * 100vw);
+		@include transition(all, 1s);
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: 100% 50%;
+		}
+	}
+
+	&__layer {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		@include transition(opacity);
+	}
+}
+
+.sidebar-column {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	background-color: $color-accent;
+	color: $color-white;
+	padding: (35/$screen-size * 100vw) (15/$screen-size * 100vw) (35/$screen-size * 100vw) (52/$screen-size * 100vw);
+
+	&__middle {
+		flex: 1 1 auto;
+	}
+}
+.sidebar-title {
+	font-size: (16/$screen-size * 100vw);
+	font-weight: 500;
+}
+
+
+.tabs-nav {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	padding: (20/$screen-size * 100vw) 0;
+
+	ul {
+		width: 100%;
+	}
+
+	li {
+		padding: (11/$screen-size * 100vw) 0;
+		overflow: hidden;
+
+		&.active {
+			a {
+				transform: translateX(0);
+
+				>span {
+					opacity: 0;
+				}
+
+				&:after {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	a {
+		display: inline-block;
+		font-size: (44/$screen-size * 100vw);
+		color: $color-white;
+		line-height: 1.2;
+		@include transition(transform);
+		position: relative;
+		padding-left: (60/$screen-size * 100vw);
+		transform: translateX(-(60/$screen-size * 100vw));
+
+		span {
+			opacity: 0.7;
+			@include transition(opacity);
+		}
+
+		&:before {
+			content: '→';
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: block;
+			font-size: inherit;
+			line-height: 1;
+		}
+
+		&:after {
+			content: attr(data-link);
+			font-size: inherit;
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding-left: inherit;
+			font-style: italic;
+			opacity: 0;
+			@include transition(opacity);
+		}
+
+		&:hover {
+
+			>span {
+				opacity: 0;
+			}
+
+
+			&:after {
+				opacity: 1;
+			}
+
+		}
+	}
+}

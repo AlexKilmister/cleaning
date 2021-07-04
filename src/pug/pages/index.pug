@@ -13,23 +13,134 @@ block description
 prepend css
 
 block header
-	//include ../includes/modules/header
+	include ../includes/modules/header
 
 prepend body
 
 block content
 	main.content
-		.container
-			.test
-				| {{message}}
-			.text
-				| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi deserunt dignissimos et fugiat, impedit iure maiores nam nemo neque nisi non officia pariatur perferendis, placeat porro quod repellat suscipit vero?
-			example-component
+		section.section-promo.js-promo
+			.promo
+				.promo__column
+					.promo__image
+						img(src="assets/img/images/bg_promo.jpg" alt="")
+				.promo__column
+					.promo__content
+						.hero
+							h1.hero__title
+								| Уборка квартир в Киеве
+							.hero__descr.fz18
+								| Мы уберем у вас дома или в офисе. Наведем чистоту после ремонта и проведем генеральную уборку.
+							.hero__button
+								a.btn-main-around.js-button(href="#")
+									| #[span Заказать уборку]
+		.advantages-block
+			.container
+				.advantages.js-advantages
+					-var advantages = [{'title':'Тщательно отобранный персонал'},{'title':'Качественная<br> эко-химия'},{'title':'Контролируем качество'},{'title':'Работаем круглосуточно'}]
+					each item,i in advantages
+						.advantages__item
+							.advantages-card
+								.advantages-card__front
+									.advantages-card__title
+										| !{item.title}
+									.advantages-card__image
+										img(src="assets/img/images/sr"+ (i+1) +"b.png" alt="")
+								.advantages-card__back
+									.advantages-card__text
+										| Не нужно тратить время, силы и ресурсы на разме- щение вакансий, проведе- ние собеседований, про- верку кандидатов на должность уборщицы. За счет больших объемов мы можем сделать это эффективнее.
+		section.section-main.section-main--tabs.js-section
+			.container
+				.top-section
+					.top-section__col.top-section__col--f1
+						h2.title-section
+							| Как мы убираем
+					.top-section__col.top-section__col--f2
+						.fz18
+							| Клинер приезжает в назначенное время со всем необходимым и сразу приступает к делу. Вам остаётся только оценить результат.
+			.tabs.js-tabs.js-animate-tabs
+				.tabs__sidebar
+					.sidebar-column
+						.sidebar-column__top
+							.sidebar-title
+								| Как мы убираем
+						.sidebar-column__middle
+							-var nav = ['Кухня','Комнаты','Ванная','Прихожая']
+							nav.tabs-nav.js-tabs-nav
+								ul
+									each item,i in nav
+										li
+											a(href="#tb" + (i + 1) data-link=item)
+												span
+													| #{item}
+
+				.tabs__content
+					.tabs-panel.js-tabs-panel#tb1
+						.service-block
+							.service-block__image(style="background-image: url(assets/img/images/tb1.jpg)")
+							.service-block__layer
+								.tooltips.tooltips--f1
+									-var t1 = ['Чистим фасад вытяжки','Чистим плиту','Моем пол','Чистим фасад кухни','Моем холодильник','Моем стол','Моем посуду']
+									each item,i in t1
+										.tooltips__item(class="tooltips__item--t" + (i+1))
+											.tooltip
+												.tooltip__circle
+													+icon('plus')
+												.tooltip__body
+													.tooltip__text
+														| #{item}
+
+					.tabs-panel.js-tabs-panel#tb2
+						.service-block
+							.service-block__image(style="background-image: url(assets/img/images/tb2.jpg)")
+							.service-block__layer
+								.tooltips.tooltips--f2
+									-var t2 = ['Чистим фасад вытяжки', 'Чистим плиту', 'Моем пол', 'Чистим фасад кухни', 'Моем холодильник']
+									each item,i in t2
+										.tooltips__item(class="tooltips__item--t" + (i + 1))
+											.tooltip
+												.tooltip__circle
+													+icon('plus')
+												.tooltip__body
+													.tooltip__text
+														| #{item}
+					.tabs-panel.js-tabs-panel#tb3
+						.service-block
+							.service-block__image(style="background-image: url(assets/img/images/tb1.jpg)")
+							.service-block__layer
+								.tooltips.tooltips--f1
+									each item,i in t1
+										.tooltips__item(class="tooltips__item--t" + (i + 1))
+											.tooltip
+												.tooltip__circle
+													+icon('plus')
+												.tooltip__body
+													.tooltip__text
+														| #{item}
+					.tabs-panel.js-tabs-panel#tb4
+						.service-block
+							.service-block__image(style="background-image: url(assets/img/images/tb2.jpg)")
+							.service-block__layer
+								.tooltips.tooltips--f2
+									each item,i in t2
+										.tooltips__item(class="tooltips__item--t" + (i + 1))
+											.tooltip
+												.tooltip__circle
+													+icon('plus')
+												.tooltip__body
+													.tooltip__text
+														| #{item}
+
+
+
+
+
+
 
 
 
 block footer
-	//include ../includes/modules/footer
+
 
 
 block scripts

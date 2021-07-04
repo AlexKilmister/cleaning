@@ -1,8 +1,20 @@
-window.Vue = require('vue')
-const $ = require('jquery')
-
 // JS
 import './js/'
+import tabs from './js/tabs'
+import ButtonAnimate from "./js/ButtonAnimate";
+import animateScroll from "./js/animateScroll";
+
+window.addEventListener('DOMContentLoaded', () => {
+  const btn = document.querySelector('.js-button')
+
+  tabs()
+  if(btn) {
+    new ButtonAnimate(btn)
+  }
+  animateScroll()
+
+
+})
 
 // SCSS
 import './assets/scss/main.scss'
@@ -10,16 +22,3 @@ import './assets/scss/main.scss'
 // CSS (example)
 // import './assets/css/main.css'
 
-
-// Vue components (for use in html)
-Vue.component('example-component', require('./components/Example.vue').default)
-
-// Vue init
-const app = new Vue({
-  el: '#app',
-  data () {
-    return {
-      message: 'test'
-    }
-  }
-})

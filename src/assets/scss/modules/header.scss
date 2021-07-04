@@ -1,1 +1,112 @@
-// header style
+.header-main {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background-color: transparent;
+	padding: (16/$screen-size * 100vw) (30/$screen-size * 100vw) (16/$screen-size * 100vw) (54/$screen-size * 100vw);
+
+	&__row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+
+
+.logo-wrap {
+	margin-right: (20/$screen-size * 100vw);
+}
+
+.logo {
+	display: block;
+
+	img {
+		width: (98/$screen-size * 100vw);
+		height: (25/$screen-size * 100vw);
+	}
+}
+
+.switch {
+	margin-right: (20/$screen-size * 100vw);
+
+	ul {
+		display: inline-flex;
+		align-items: center;
+		background-color: $color-white;
+		border-radius: (20/$screen-size * 100vw);
+		padding: (3/$screen-size * 100vw);
+	}
+
+	li {
+		margin-left: (4/$screen-size * 100vw);
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&.active {
+			a {
+				color: $color-white;
+				background-color: $color-accent;
+			}
+		}
+	}
+
+	a {
+		font-size: (14/$screen-size * 100vw);
+		font-weight: 500;
+		color: $color-dark;
+		padding: (8/$screen-size * 100vw) (12/$screen-size * 100vw);
+		border-radius: (20/$screen-size * 100vw);
+		@include transition(color);
+		line-height: 1;
+		display: block;
+
+		&:hover {
+			color: $color-accent;
+		}
+	}
+}
+
+.support {
+	font-size: (16/$screen-size * 100vw);
+	font-weight: 500;
+	line-height: 1;
+	margin-right: (30/$screen-size * 100vw);
+
+	a {
+		color: $color-base;
+		@include transition(color);
+
+		&:hover {
+			color: $color-accent;
+		}
+	}
+}
+
+.main-menu {
+	margin: 0 auto;
+
+	ul {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0 -(16/$screen-size * 100vw);
+	}
+
+	li {
+		padding: (10/$screen-size * 100vw) (16/$screen-size * 100vw);
+	}
+
+	a {
+		font-weight: 500;
+		font-size: (16/$screen-size * 100vw);
+		color: $color-base;
+		@include transition(color);
+
+		&:hover {
+			color: $color-accent;
+		}
+	}
+}

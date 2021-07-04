@@ -7,4 +7,9 @@
 @import "utils/style";
 
 // Modules:
-// example: @import "modules/my-module.scss";
+@import "modules/header";
+@import "modules/promo";
+@import "modules/advantages";
+@import "modules/tabs";
+@import "modules/buttons";
+@import "modules/tooltips";

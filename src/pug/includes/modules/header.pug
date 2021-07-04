@@ -1,3 +1,22 @@
-header.header
-  .container
-    span header
+header.header.header-main
+	.header-main__row
+		.logo-wrap
+			a.logo(href="/")
+				img.img-fluid(src="assets/img/logo.svg" alt="" width="98" height="25")
+		.switch
+			ul
+				li.active
+					| #[a(href="#") Дом]
+				li
+					| #[a(href="#") Офис]
+		nav.main-menu
+			ul
+				-var menu = [{'title':'После ремонта', 'url':'#'},{'title':'Генеральная уборка', 'url':'#'},{'title':'Регулярная уборка', 'url':'#'},{'title':'Мойка окон', 'url':'#'}]
+				each item in menu
+					li
+						a(href="#")
+							| #{item.title}
+		.support
+			| #[a(href="tel:380674016977") +380 67 401 69 77] | 24/7
+		button.btn-menu(type="button")
+			+icon('menu')

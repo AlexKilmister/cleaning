@@ -1,0 +1,36 @@
+.section-main {
+	padding: (73/$screen-size * 100vw) 0;
+
+	&--tabs {
+		padding-bottom: 0;
+	}
+}
+
+.title-section {
+	font-size: (44/$screen-size * 100vw);
+	margin-bottom: (30/$screen-size * 100vw);
+	line-height: 1.2;
+	font-weight: 400;
+}
+
+.top-section {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	max-width: (1114/$screen-size * 100vw);
+	width: 100%;
+	margin: 0 auto (52/$screen-size * 100vw);
+
+	&__col {
+		width: 50%;
+		padding: 0 (10/$screen-size * 100vw);
+
+		&--f1 {
+			width: 65%;
+		}
+
+		&--f2 {
+			width: 35%;
+		}
+	}
+}

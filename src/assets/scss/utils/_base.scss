@@ -62,14 +62,6 @@ select {
 	}
 }
 
-table {
-	table-layout: fixed;
-	width: 100%;
-	td {
-		word-wrap: break-word;
-	}
-}
-
 .wrapper {
 	position: relative;
 	min-height: 100vh;
@@ -101,11 +93,12 @@ table {
 }
 
 .container {
-  width: 100%;
-  flex: 0 0 auto;
-  position: relative;
-  margin: 0 auto;
-  max-width: $container-xl;
+	width: 100%;
+	max-width: (1350/$screen-size * 100vw);
+	margin: 0 auto;
+	padding: 0 (15/$screen-size * 100vw);
 }
 
-
+.fz18 {
+	font-size: (18/$screen-size * 100vw);
+}

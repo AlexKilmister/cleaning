@@ -1,3 +1,8 @@
 @import "mixins";
 
-//@include font-face("RobotoBold", "../fonts/RobotoBold", 400, normal, "modern");
+@include font-face("tttravels", "../fonts/tttravels-bold", 700, normal, "modern");
+@include font-face("tttravels", "../fonts/tttravels-demibold", 600, normal, "modern");
+@include font-face("tttravels", "../fonts/tttravels-medium", 500, normal, "modern");
+@include font-face("tttravels", "../fonts/tttravels-regular", 400, normal, "modern");
+@include font-face("tttravels", "../fonts/tttravels-light", 300, normal, "modern");
+
