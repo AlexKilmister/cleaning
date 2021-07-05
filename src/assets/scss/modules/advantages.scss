@@ -5,11 +5,20 @@
 .advantages {
 	display: flex;
 	align-items: stretch;
+	flex-wrap: wrap;
 	margin: 0 -(20/$screen-size * 100vw);
 
 	&__item {
 		padding: (20/$screen-size * 100vw);
 		width: 25%;
+
+		@media screen and (max-width: 767px) {
+			width: 50%;
+		}
+
+		@media screen and (max-width: 479px) {
+
+		}
 	}
 }
 
@@ -21,6 +30,11 @@
 	background-color: $color-light-gray;
 	border-radius: (8/$screen-size * 100vw);
 	overflow: hidden;
+
+	@media screen and (max-width: 767px) {
+		min-height: (350/$bp-mobile * 100vw);
+		border-radius: (8/$bp-mobile * 100vw);
+	}
 
 	&:hover, &:focus {
 		.advantages-card {
@@ -49,6 +63,14 @@
 		height: 100%;
 		display: flex;
 		flex-direction: column;
+
+		@media screen and (max-width: 767px) {
+			padding: (40/$bp-mobile * 100vw) (15/$bp-mobile * 100vw) 0;
+		}
+
+		@media screen and (max-width: 479px) {
+
+		}
 	}
 
 	&__back {
@@ -74,6 +96,11 @@
 			border-radius: 50%;
 			@include transition(transform, 0.2s);
 			transform: scale(0);
+
+			@media screen and (max-width: 767px) {
+				width: (50/$bp-mobile * 100vw);
+				height: (50/$bp-mobile * 100vw);
+			}
 		}
 	}
 
@@ -83,6 +110,11 @@
 		line-height: 1.1;
 		margin-bottom: (20/$screen-size * 100vw);
 		font-weight: 500;
+
+		@media screen and (max-width: 767px) {
+			font-size: (30/$bp-mobile * 100vw);
+			margin-bottom: (20/$bp-mobile * 100vw);
+		}
 	}
 
 	&__image {
@@ -93,6 +125,15 @@
 			object-fit: contain;
 			width: (211/$screen-size * 100vw);
 			height: (175/$screen-size * 100vw);
+
+			@media screen and (max-width: 767px) {
+				width: (211/$bp-mobile * 100vw);
+				height: (175/$bp-mobile * 100vw);
+			}
+
+			@media screen and (max-width: 479px) {
+
+			}
 		}
 	}
 
@@ -104,5 +145,15 @@
 		color: $color-white;
 		padding: (30/$screen-size * 100vw);
 		line-height: 1.375;
+
+		@media screen and (max-width: 767px) {
+			transform: translateY((30/$bp-mobile * 100vw));
+			font-size: (16/$bp-mobile * 100vw);
+			padding: (30/$bp-mobile * 100vw);
+		}
+
+		@media screen and (max-width: 479px) {
+			font-size: (18/$bp-mobile * 100vw);
+		}
 	}
 }

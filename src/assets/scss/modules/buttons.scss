@@ -16,6 +16,13 @@
 	position: relative;
 	cursor: pointer;
 
+	@media screen and (max-width: 767px) {
+		width: (194/$bp-mobile * 100vw);
+		height: (194/$bp-mobile * 100vw);
+		padding: (15/$bp-mobile * 100vw);
+		font-size: (18/$bp-mobile * 100vw);
+	}
+
 	&:hover, &:hover, &:active {
 		color: $color-white;
 
@@ -50,6 +57,21 @@
 	background-color: transparent;
 	border: 0;
 	cursor: pointer;
+
+	@media screen and (max-width: 991px) {
+		width: (33/$bp-tablet * 100vw);
+		height: (33/$bp-tablet * 100vw);
+	}
+
+	@media screen and (max-width: 767px) {
+		width: (32/$bp-mobile * 100vw);
+		height: (32/$bp-mobile * 100vw);
+	}
+
+	@media screen and (max-width: 479px) {
+		width: (32/$bp-mobile-xs * 100vw);
+		height: (32/$bp-mobile-xs * 100vw);
+	}
 
 	.svg-icon {
 		width: 100%;

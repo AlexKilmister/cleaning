@@ -52,7 +52,8 @@ const animateScroll = () => {
 		gsap.timeline({
 			scrollTrigger: {
 				trigger: '.js-promo',
-				start: "60% 50%",
+				start: "top -100",
+				end: 99999,
 				toggleActions: "play none none reverse"
 			},
 			defaults: {duration: 0.5}

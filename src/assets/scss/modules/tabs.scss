@@ -3,6 +3,18 @@
 	align-items: stretch;
 	margin-bottom: (100/$screen-size * 100vw);
 
+	@media screen and (max-width: 991px) {
+		margin-bottom: (100/$bp-tablet * 100vw);
+	}
+
+	@media screen and (max-width: 767px) {
+		margin-bottom: (100/$bp-mobile * 100vw);
+	}
+
+	@media screen and (max-width: 479px) {
+		margin-bottom: (100/$bp-mobile-xs * 100vw);
+	}
+
 	&__sidebar {
 		width: 0;
 		height: (630/$screen-size * 100vw);
@@ -154,9 +166,22 @@
 		flex: 1 1 auto;
 	}
 }
+
 .sidebar-title {
 	font-size: (16/$screen-size * 100vw);
 	font-weight: 500;
+
+	@media screen and (max-width: 991px) {
+		font-size: (16/$bp-tablet * 100vw);
+	}
+
+	@media screen and (max-width: 767px) {
+		font-size: (16/$bp-mobile * 100vw);
+	}
+
+	@media screen and (max-width: 479px) {
+		font-size: (16/$bp-mobile * 100vw);
+	}
 }
 
 
