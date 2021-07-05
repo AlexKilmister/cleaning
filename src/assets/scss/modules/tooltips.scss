@@ -189,24 +189,27 @@
 	}
 
 	&:hover {
-		.tooltip {
-			&__circle {
-				box-shadow: 0 0 0 0 rgba($color-accent, 0.2);
+		@media screen and (min-width: 1200px){
+			.tooltip {
+				&__circle {
+					box-shadow: 0 0 0 0 rgba($color-accent, 0.2);
 
-				.svg-icon {
-					transform: rotate(-135deg);
+					.svg-icon {
+						transform: rotate(-135deg);
+					}
+				}
+
+				&__body {
+					visibility: visible;
+				}
+
+				&__text {
+					opacity: 1;
+					transform: scale(1);
 				}
 			}
-
-			&__body {
-				visibility: visible;
-			}
-
-			&__text {
-				opacity: 1;
-				transform: scale(1);
-			}
 		}
+
 	}
 
 	&.open {

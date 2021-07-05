@@ -6,7 +6,7 @@
 	background-color: transparent;
 	padding: (16/$screen-size * 100vw) (30/$screen-size * 100vw) (16/$screen-size * 100vw) (54/$screen-size * 100vw);
 	z-index: 150;
-	transition: 0.4s ease;
+	transition: background-color 0.4s ease, box-shadow 0.4s ease;
 
 	@media screen and (max-width: 991px) {
 		padding: (10/$bp-tablet * 100vw) (20/$bp-tablet * 100vw);
