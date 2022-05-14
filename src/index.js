@@ -16,8 +16,6 @@ window.addEventListener('DOMContentLoaded', () => {
   animateScroll()
   header()
   tooltips()
-
-
 })
 
 // SCSS
